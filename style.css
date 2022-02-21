@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    background-image: url(img/main\ image.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* nav
+===================== */
+
+nav {
+    position: fixed;
+    background-color: #ebebebee;
+    width: 100%;
+    height: 10%;
+    z-index: 50;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 30px;
+    text-align: center;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #2567f5;
+}
+
+nav #myInput {
+    /* margin-top: 1px; */
+    border: 1px solid #2567f5;
+    border-radius: 3px;
+    height: 30px;
+}
+
+section {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 0;
+    opacity: 0;
+    transition: all ease-in .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1 {
+    font-size: 20px;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+section:target {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+section:target h1 {
+    opacity: 0;
+    animation: 2s fadeIn forwards .5s;
+}
+
+
+/* #first {
+    background-color: var(--primary-color);
+} */
+
+.main-container {
+    height: 80%;
+}
+
+.card {
+    margin: 10px;
+}
+
+.btn {
+    padding: 10px;
+}
+
+
+/* toggle
+============= */
+
+.switch {
+    position: relative;
+    display: flex;
+    float: right;
+    width: 60px;
+    height: 34px;
+    margin-top: 10px;
+    align-self: end;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2567f5;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2567f5;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+#second {
+    background-color: var(--primary-color);
+}
+
+#third {
+    background-color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
